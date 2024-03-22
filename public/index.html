@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>URL Shortener</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .form-control {
+            border-radius: 0;
+            border-color: #ced4da;
+        }
+
+        .btn-shorten {
+            border-radius: 0;
+            background: linear-gradient(45deg, #ff7e5f, #ff55a5);
+            color: #fff;
+        }
+
+        .btn-shorten:hover {
+            background: linear-gradient(45deg, #ff55a5, #ff7e5f);
+        }
+
+        .btn-copy {
+            border-radius: 0;
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-copy:hover {
+            background-color: #218838;
+        }
+
+        .copy-message {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card text-center">
+            <img src="photos/shortenurl.png" class="card-img-top" alt="Shorten URL">
+            <div class="card-body">
+                <input type="text" class="form-control" id="shorten_text" placeholder="Enter your URL">
+                <button type="button" class="btn btn-shorten btn-block mt-3" id="shorten_button">Shorten URL</button>
+            </div>
+            <div class="card-footer" id="copy_div" style="display: none;">
+                <span id="shortentextlink"></span>
+                <button type="button" class="btn btn-copy clipboard mt-3" data-clipboard-target="#copy_text">Copy</button>
+                <br>
+                <span id="copy_message" class="copy-message mt-2" style="display: none;">Copied!</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
